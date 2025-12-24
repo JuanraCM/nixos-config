@@ -40,10 +40,17 @@
 
   # Desktop environment
   programs.niri.enable = true;
-  services.getty.autologinUser = "juanrita";
 
   # User config
-  programs.zsh.enable = true;
+  services.getty.autologinUser = "juanrita";
+  programs.zsh = {
+    enable = true;
+    shellInit = ''
+      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+        exec niri --session
+      fi
+    '';
+  };
 
   users = {
     defaultUserShell = pkgs.zsh;

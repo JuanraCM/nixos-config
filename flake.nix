@@ -10,18 +10,27 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs =
+    { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-    in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      inherit system;
-      modules = [ ./configuration.nix ];
-    };
+      stateVersion = "25.11";
+      hostname = "nixos";
+    in
+    {
+      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-    homeConfigurations.juanrita = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.${system};
-      modules = [ ./home.nix ];
+        specialArgs = {
+          inherit stateVersion hostname;
+        };
+
+        modules = [ ./configuration.nix ];
+      };
+
+      homeConfigurations.juanrita = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./home.nix ];
+      };
     };
-  };
 }

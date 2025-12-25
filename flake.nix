@@ -26,16 +26,17 @@
           hostname = "slim7";
         };
 
-        modules = [ ./hosts/slim7/configuration.nix ];
-      };
-
-      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = {
-          inherit stateVersion username;
-        };
-
-        modules = [ ./home-manager/home.nix ];
+        modules = [
+          ./hosts/slim7/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.users.${username} = ./home-manager/home.nix;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {
+              inherit stateVersion username;
+            };
+          }
+        ];
       };
     };
 }

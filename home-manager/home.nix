@@ -2,8 +2,8 @@
 
 {
   imports = [
-    ./home-manager/modules
-    ./home-manager/packages.nix
+    ./modules
+    ./packages.nix
   ];
 
   home = {

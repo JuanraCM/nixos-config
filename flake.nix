@@ -26,7 +26,7 @@
           inherit stateVersion hostname;
         };
 
-        modules = [ ./configuration.nix ];
+        modules = [ ./system/configuration.nix ];
       };
 
       homeConfigurations.juanrita = home-manager.lib.homeManagerConfiguration {
@@ -35,7 +35,7 @@
           inherit stateVersion username;
         };
 
-        modules = [ ./home.nix ];
+        modules = [ ./home-manager/home.nix ];
       };
     };
 }

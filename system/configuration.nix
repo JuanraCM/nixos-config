@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./system/modules
+    ./modules
   ];
 
   environment.systemPackages = [ pkgs.home-manager ];

@@ -1,0 +1,125 @@
+// https://yalter.github.io/niri/Configuration:-Introduction
+
+// Miscellaneous configuration.
+// https://yalter.github.io/niri/Configuration:-Miscellaneous
+// spawn-sh-at-startup "wl-paste --watch cliphist store"
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+prefer-no-csd
+
+// Input device configuration.
+// https://yalter.github.io/niri/Configuration:-Input
+input {
+  keyboard {
+    numlock
+  }
+
+  touchpad {
+    tap
+    natural-scroll
+  }
+
+  mouse {
+    accel-speed -0.2
+    accel-profile "flat"
+  }
+
+  warp-mouse-to-focus
+  focus-follows-mouse
+}
+
+// Layout configuration.
+// https://yalter.github.io/niri/Configuration:-Layout
+layout {
+  gaps 8
+  center-focused-column "never"
+  default-column-width { proportion 0.5; }
+
+  focus-ring {
+    off
+  }
+
+  border {
+    width 2
+    active-color "#7fc8ff"
+    inactive-color "#505050"
+    urgent-color "#9b0000"
+  }
+}
+
+// Animations configuration.
+// https://yalter.github.io/niri/Configuration:-Animations
+animations {
+  slowdown 0.8
+}
+
+// Window rules configuration.
+// https://yalter.github.io/niri/Configuration:-Window-Rules
+window-rule {
+  geometry-corner-radius 4
+  clip-to-geometry true
+}
+
+window-rule {
+  match app-id="qemu"
+  open-maximized true
+}
+
+// Key bindings configuration.
+// https://yalter.github.io/niri/Configuration:-Key-Bindings
+binds {
+  Mod+Return { spawn "wezterm"; } // Change
+  Mod+B { spawn "chromium"; }
+  Mod+Space { spawn "fuzzel"; }
+  // Mod+Alt+L { spawn "dms" "ipc" "call" "lock" "lock"; }
+  // Mod+Q { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+
+  Mod+O repeat=false { toggle-overview; }
+  Mod+W repeat=false { close-window; }
+
+  Mod+H     { focus-column-left; }
+  Mod+J     { focus-window-down; }
+  Mod+K     { focus-window-up; }
+  Mod+L     { focus-column-right; }
+
+  Mod+Shift+H     { move-column-left; }
+  Mod+Shift+J     { move-window-down; }
+  Mod+Shift+K     { move-window-up; }
+  Mod+Shift+L     { move-column-right; }
+
+  Mod+F { maximize-column; }
+  Mod+Shift+F { fullscreen-window; }
+
+  Mod+Minus { set-column-width "-10%"; }
+  Mod+Plus  { set-column-width "+10%"; }
+
+  Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+  Print { screenshot; }
+  Ctrl+Print { screenshot-screen; }
+  Alt+Print { screenshot-window; }
+
+  // Temp
+  Mod+1 { focus-workspace 1; }
+  Mod+2 { focus-workspace 2; }
+  Mod+3 { focus-workspace 3; }
+  Mod+4 { focus-workspace 4; }
+  Mod+5 { focus-workspace 5; }
+  Mod+Ctrl+1 { move-column-to-workspace 1; }
+  Mod+Ctrl+2 { move-column-to-workspace 2; }
+  Mod+Ctrl+3 { move-column-to-workspace 3; }
+  Mod+Ctrl+4 { move-column-to-workspace 4; }
+  Mod+Ctrl+5 { move-column-to-workspace 5; }
+
+  // XF86AudioRaiseVolume { spawn "dms" "ipc" "audio" "increment" "5"; }
+  // XF86AudioLowerVolume { spawn "dms" "ipc" "audio" "decrement" "5"; }
+  // XF86AudioMute { spawn "dms" "ipc" "audio" "mute"; }
+  // XF86MonBrightnessUp { spawn "dms" "ipc" "brightness" "increment" "10" ""; }
+  // XF86MonBrightnessDown { spawn "dms" "ipc" "brightness" "decrement" "10" ""; }
+}
+
+// Disable hotkey overlay at startup
+hotkey-overlay {
+    skip-at-startup
+}
+
+include "user.kdl"

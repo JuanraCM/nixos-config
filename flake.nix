@@ -15,21 +15,21 @@
     let
       system = "x86_64-linux";
       stateVersion = "25.11";
-      hostname = "nixos";
       username = "juanrita";
     in
     {
-      nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.slim7 = nixpkgs.lib.nixosSystem {
         inherit system;
 
         specialArgs = {
-          inherit stateVersion hostname;
+          inherit stateVersion;
+          hostname = "slim7";
         };
 
-        modules = [ ./system/configuration.nix ];
+        modules = [ ./hosts/slim7/configuration.nix ];
       };
 
-      homeConfigurations.juanrita = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = {
           inherit stateVersion username;

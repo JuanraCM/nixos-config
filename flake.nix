@@ -16,6 +16,7 @@
       system = "x86_64-linux";
       stateVersion = "25.11";
       hostname = "nixos";
+      username = "juanrita";
     in
     {
       nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -30,6 +31,10 @@
 
       homeConfigurations.juanrita = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = {
+          inherit stateVersion username;
+        };
+
         modules = [ ./home.nix ];
       };
     };

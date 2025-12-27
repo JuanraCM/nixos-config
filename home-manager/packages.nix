@@ -8,9 +8,6 @@
     alacritty
     fuzzel
     gnome-keyring
-    xdg-desktop-portal-gnome
-    xdg-desktop-portal-gtk
-    xwayland-satellite
 
     # LSPs
     lua-language-server

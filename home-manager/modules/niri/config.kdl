@@ -1,5 +1,7 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
+spawn-at-startup "waybar"
+
 // Miscellaneous configuration.
 // https://yalter.github.io/niri/Configuration:-Miscellaneous
 // spawn-sh-at-startup "wl-paste --watch cliphist store"

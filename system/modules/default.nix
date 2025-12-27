@@ -8,6 +8,7 @@
     ./host.nix
     ./kernel.nix
     ./net.nix
+    ./nh.nix
     ./nix.nix
     ./user.nix
   ];

@@ -28,7 +28,7 @@
           inherit system;
 
           specialArgs = {
-            inherit stateVersion hostname;
+            inherit stateVersion hostname username;
           };
 
           modules = [

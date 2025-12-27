@@ -113,9 +113,9 @@ binds {
   Mod+Ctrl+4 { move-column-to-workspace 4; }
   Mod+Ctrl+5 { move-column-to-workspace 5; }
 
-  // XF86AudioRaiseVolume { spawn "dms" "ipc" "audio" "increment" "5"; }
-  // XF86AudioLowerVolume { spawn "dms" "ipc" "audio" "decrement" "5"; }
-  // XF86AudioMute { spawn "dms" "ipc" "audio" "mute"; }
+  XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+  XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+  XF86AudioMute { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
   // XF86MonBrightnessUp { spawn "dms" "ipc" "brightness" "increment" "10" ""; }
   // XF86MonBrightnessDown { spawn "dms" "ipc" "brightness" "decrement" "10" ""; }
 }

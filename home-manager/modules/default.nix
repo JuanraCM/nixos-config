@@ -2,7 +2,7 @@
   imports = [
     ./browser.nix
     ./git.nix
-    ./niri.nix
+    ./niri
     ./terminal.nix
   ];
 }

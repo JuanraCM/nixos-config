@@ -14,7 +14,10 @@
     defaultUserShell = pkgs.zsh;
     users.juanrita = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [
+        "wheel"
+        "networkmanager"
+      ];
     };
   };
 

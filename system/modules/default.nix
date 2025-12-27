@@ -11,6 +11,7 @@
     ./net.nix
     ./nh.nix
     ./nix.nix
+    ./polkit.nix
     ./user.nix
   ];
 }

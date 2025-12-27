@@ -12,4 +12,6 @@
   };
 
   environment.systemPackages = [ pkgs.xwayland-satellite ];
+
+  services.gvfs.enable = true;
 }

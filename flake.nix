@@ -35,6 +35,8 @@
             ./hosts/${hostname}/configuration.nix
             home-manager.nixosModules.home-manager
             {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
               home-manager.users.${username} = ./home-manager/home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {

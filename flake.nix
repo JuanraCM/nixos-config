@@ -8,10 +8,15 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       stateVersion = "25.11";
@@ -28,7 +33,12 @@
           inherit system;
 
           specialArgs = {
-            inherit stateVersion hostname username;
+            inherit
+              inputs
+              stateVersion
+              hostname
+              username
+              ;
           };
 
           modules = [
@@ -40,7 +50,7 @@
               home-manager.users.${username} = ./home-manager/home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
-                inherit stateVersion username;
+                inherit inputs stateVersion username;
               };
             }
           ];

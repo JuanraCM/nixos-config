@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     # Niri deps
     alacritty
-    fuzzel
     gnome-keyring
 
     # LSPs

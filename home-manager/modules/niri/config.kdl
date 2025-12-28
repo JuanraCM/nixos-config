@@ -72,7 +72,7 @@ window-rule {
 binds {
   Mod+Return { spawn "wezterm"; } // Change
   Mod+B { spawn "chromium"; }
-  Mod+Space { spawn "fuzzel"; }
+  Mod+Space { spawn "wofi" "-S" "drun"; }
   // Mod+Alt+L { spawn "dms" "ipc" "call" "lock" "lock"; }
   // Mod+Q { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
 

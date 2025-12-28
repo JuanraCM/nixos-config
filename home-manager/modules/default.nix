@@ -7,5 +7,6 @@
     ./swayosd.nix
     ./terminal.nix
     ./waybar
+    ./wofi.nix
   ];
 }

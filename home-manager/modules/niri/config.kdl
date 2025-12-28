@@ -1,6 +1,7 @@
 // https://yalter.github.io/niri/Configuration:-Introduction
 
 spawn-at-startup "waybar"
+spawn-at-startup "mako"
 spawn-sh-at-startup "swaybg -i ~/.config/niri/background.png"
 
 // Miscellaneous configuration.

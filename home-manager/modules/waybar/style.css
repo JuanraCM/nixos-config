@@ -1,0 +1,48 @@
+@define-color foreground #cdd6f4;
+@define-color background #1a1b26;
+
+* {
+  background-color: @background;
+  color: @foreground;
+
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: 'DejaVu Sans Mono', 'Font Awesome 7 Free';
+  font-size: 14px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#tray {
+  margin-right: 20px;
+}
+
+#network,
+#bluetooth,
+#pulseaudio,
+#cpu,
+#battery {
+  margin-right: 15px;
+}
+
+tooltip {
+  padding: 2px;
+}

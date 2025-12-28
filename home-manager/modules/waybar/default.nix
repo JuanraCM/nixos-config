@@ -61,6 +61,7 @@
           tooltip-format-disconnected = "Disconnected";
           interval = 3;
           spacing = 1;
+          on-click = "$TERMINAL -e impala";
         };
 
         "bluetooth" = {
@@ -68,6 +69,7 @@
           format-connected = "󰂱";
           format-no-controller = "";
           tooltip-format = "Devices connected: {num_connections}";
+          on-click = "$TERMINAL -e bluetui";
         };
 
         "pulseaudio" = {

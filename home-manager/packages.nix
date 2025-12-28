@@ -11,8 +11,10 @@
     nil
 
     # Others
+    bluetui
     fzf
     gcc
+    impala
     nautilus
     neovim
     nodejs

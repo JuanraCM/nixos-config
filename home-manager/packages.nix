@@ -16,14 +16,15 @@
     nautilus
     neovim
     nodejs
+    opencode
     pavucontrol
     ripgrep
     ruby
     spotify
     stow
+    swaybg
     vesktop
     vlc
     zoxide
-    swaybg
   ];
 }

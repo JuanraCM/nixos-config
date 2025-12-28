@@ -5,6 +5,7 @@
     ./boot.nix
     ./desktop.nix
     ./env.nix
+    ./gaming.nix
     ./graphics.nix
     ./host.nix
     ./kernel.nix

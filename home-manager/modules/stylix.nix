@@ -17,6 +17,7 @@
       neovim.enable = false;
       waybar.enable = false;
       wezterm.enable = false;
+      wofi.colors.enable = false;
     };
 
     polarity = "dark";

@@ -1,15 +1,15 @@
 { config, ... }:
 
 let
-  colors = config.lib.stylix.colors;
+  colors = config.lib.stylix.colors.withHashtag;
 in
 {
   programs.waybar = {
     enable = true;
     style = ''
       * {
-        background-color: #${colors.base01};
-        color: #${colors.base08};
+        background-color: ${colors.base01};
+        color: ${colors.base08};
 
         border: none;
         border-radius: 0;

@@ -6,6 +6,12 @@ in
 {
   home.file.".config/niri/config.kdl" = {
     text = ''
+      workspace "1"
+      workspace "2"
+      workspace "3"
+      workspace "4"
+      workspace "5"
+
       spawn-at-startup "waybar"
       spawn-at-startup "mako"
       spawn-sh-at-startup "swaybg -i ~/.config/niri/background.png"
@@ -95,17 +101,16 @@ in
         Ctrl+Print { screenshot-screen; }
         Alt+Print { screenshot-window; }
 
-        // Temp
-        Mod+1 { focus-workspace 1; }
-        Mod+2 { focus-workspace 2; }
-        Mod+3 { focus-workspace 3; }
-        Mod+4 { focus-workspace 4; }
-        Mod+5 { focus-workspace 5; }
-        Mod+Ctrl+1 { move-column-to-workspace 1; }
-        Mod+Ctrl+2 { move-column-to-workspace 2; }
-        Mod+Ctrl+3 { move-column-to-workspace 3; }
-        Mod+Ctrl+4 { move-column-to-workspace 4; }
-        Mod+Ctrl+5 { move-column-to-workspace 5; }
+        Mod+1 { focus-workspace "1"; }
+        Mod+2 { focus-workspace "2"; }
+        Mod+3 { focus-workspace "3"; }
+        Mod+4 { focus-workspace "4"; }
+        Mod+5 { focus-workspace "5"; }
+        Mod+Shift+1 { move-column-to-workspace "1"; }
+        Mod+Shift+2 { move-column-to-workspace "2"; }
+        Mod+Shift+3 { move-column-to-workspace "3"; }
+        Mod+Shift+4 { move-column-to-workspace "4"; }
+        Mod+Shift+5 { move-column-to-workspace "5"; }
 
         XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume=raise"; }
         XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume=lower"; }

@@ -9,7 +9,7 @@
     ./stylix.nix
     ./swayosd.nix
     ./terminal.nix
-    ./waybar
+    ./waybar.nix
     ./wofi.nix
   ];
 }

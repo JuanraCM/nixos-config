@@ -1,7 +1,58 @@
+{ config, ... }:
+
+let
+  colors = config.lib.stylix.colors;
+in
 {
   programs.waybar = {
     enable = true;
-    style = ./style.css;
+    style = ''
+      * {
+        background-color: #${colors.base01};
+        color: #${colors.base08};
+
+        border: none;
+        border-radius: 0;
+        min-height: 0;
+        font-family: 'DejaVu Sans Mono', 'Font Awesome 7 Free';
+        font-size: 14px;
+      }
+
+      .modules-left {
+        margin-left: 8px;
+      }
+
+      .modules-right {
+        margin-right: 8px;
+      }
+
+      #workspaces button {
+        all: initial;
+        padding: 0 6px;
+        margin: 0 1.5px;
+        min-width: 9px;
+      }
+
+      #workspaces button.empty {
+        opacity: 0.5;
+      }
+
+      #tray {
+        margin-right: 20px;
+      }
+
+      #network,
+      #bluetooth,
+      #pulseaudio,
+      #cpu,
+      #battery {
+        margin-right: 15px;
+      }
+
+      tooltip {
+        padding: 2px;
+      }
+    '';
     settings = {
       mainBar = {
         layer = "top";

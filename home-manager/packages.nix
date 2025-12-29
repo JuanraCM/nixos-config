@@ -20,6 +20,7 @@
     nodejs
     opencode
     pavucontrol
+    r2modman
     ripgrep
     ruby
     spotify

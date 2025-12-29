@@ -14,5 +14,6 @@
     ./nix.nix
     ./polkit.nix
     ./user.nix
+    ./zram.nix
   ];
 }

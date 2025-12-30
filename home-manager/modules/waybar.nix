@@ -114,7 +114,7 @@ in
           tooltip-format-disconnected = "Disconnected";
           interval = 3;
           spacing = 1;
-          on-click = "$TERMINAL -e impala";
+          on-click = "xdg-terminal-exec -e impala";
         };
 
         "bluetooth" = {
@@ -122,7 +122,7 @@ in
           format-connected = "󰂱";
           format-no-controller = "";
           tooltip-format = "Devices connected: {num_connections}";
-          on-click = "$TERMINAL -e bluetui";
+          on-click = "xdg-terminal-exec -e bluetui";
         };
 
         "pulseaudio" = {
@@ -143,7 +143,7 @@ in
         "cpu" = {
           interval = 5;
           format = "󰍛";
-          on-click = "$TERMINAL -e btop";
+          on-click = "xdg-terminal-exec -e btop";
         };
 
         "battery" = {

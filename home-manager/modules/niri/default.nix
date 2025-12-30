@@ -5,126 +5,128 @@ let
 in
 {
   home.file.".config/niri/config.kdl" = {
-    text = ''
-      workspace "1"
-      workspace "2"
-      workspace "3"
-      workspace "4"
-      workspace "5"
+    text =
+      # kdl
+      ''
+        workspace "1"
+        workspace "2"
+        workspace "3"
+        workspace "4"
+        workspace "5"
 
-      spawn-at-startup "waybar"
-      spawn-at-startup "mako"
-      spawn-sh-at-startup "swaybg -i ~/.config/niri/background.png"
+        spawn-at-startup "waybar"
+        spawn-at-startup "mako"
+        spawn-sh-at-startup "swaybg -i ~/.config/niri/background.png"
 
-      // spawn-sh-at-startup "wl-paste --watch cliphist store"
-      screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
-      prefer-no-csd
+        // spawn-sh-at-startup "wl-paste --watch cliphist store"
+        screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+        prefer-no-csd
 
-      input {
-        keyboard {
-          numlock
+        input {
+          keyboard {
+            numlock
+          }
+
+          touchpad {
+            tap
+            natural-scroll
+          }
+
+          mouse {
+            accel-speed -0.2
+            accel-profile "flat"
+          }
+
+          warp-mouse-to-focus
+          focus-follows-mouse
         }
 
-        touchpad {
-          tap
-          natural-scroll
+        layout {
+          gaps 8
+          center-focused-column "never"
+          default-column-width { proportion 0.5; }
+
+          focus-ring {
+            off
+          }
+
+          border {
+            width 2
+            active-color "${colors.base0D}"
+            inactive-color "${colors.base04}"
+            urgent-color "${colors.base0F}"
+          }
         }
 
-        mouse {
-          accel-speed -0.2
-          accel-profile "flat"
+        animations {
+          slowdown 0.8
         }
 
-        warp-mouse-to-focus
-        focus-follows-mouse
-      }
-
-      layout {
-        gaps 8
-        center-focused-column "never"
-        default-column-width { proportion 0.5; }
-
-        focus-ring {
-          off
+        window-rule {
+          geometry-corner-radius 4
+          clip-to-geometry true
         }
 
-        border {
-          width 2
-          active-color "${colors.base0D}"
-          inactive-color "${colors.base04}"
-          urgent-color "${colors.base0F}"
+        window-rule {
+          match app-id="qemu"
+          open-maximized true
         }
-      }
 
-      animations {
-        slowdown 0.8
-      }
+        binds {
+          Mod+Return { spawn "wezterm"; } // Change
+          Mod+B { spawn "chromium"; }
+          Mod+Space { spawn "wofi" "-S" "drun"; }
+          Mod+Q { spawn "power-menu"; }
 
-      window-rule {
-        geometry-corner-radius 4
-        clip-to-geometry true
-      }
+          Mod+O repeat=false { toggle-overview; }
+          Mod+W repeat=false { close-window; }
 
-      window-rule {
-        match app-id="qemu"
-        open-maximized true
-      }
+          Mod+H     { focus-column-left; }
+          Mod+J     { focus-window-down; }
+          Mod+K     { focus-window-up; }
+          Mod+L     { focus-column-right; }
 
-      binds {
-        Mod+Return { spawn "wezterm"; } // Change
-        Mod+B { spawn "chromium"; }
-        Mod+Space { spawn "wofi" "-S" "drun"; }
-        Mod+Q { spawn "power-menu"; }
+          Mod+Shift+H     { move-column-left; }
+          Mod+Shift+J     { move-window-down; }
+          Mod+Shift+K     { move-window-up; }
+          Mod+Shift+L     { move-column-right; }
 
-        Mod+O repeat=false { toggle-overview; }
-        Mod+W repeat=false { close-window; }
+          Mod+F { maximize-column; }
+          Mod+Shift+F { fullscreen-window; }
 
-        Mod+H     { focus-column-left; }
-        Mod+J     { focus-window-down; }
-        Mod+K     { focus-window-up; }
-        Mod+L     { focus-column-right; }
+          Mod+Minus { set-column-width "-10%"; }
+          Mod+Plus  { set-column-width "+10%"; }
 
-        Mod+Shift+H     { move-column-left; }
-        Mod+Shift+J     { move-window-down; }
-        Mod+Shift+K     { move-window-up; }
-        Mod+Shift+L     { move-column-right; }
+          Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-        Mod+F { maximize-column; }
-        Mod+Shift+F { fullscreen-window; }
+          Print { screenshot; }
+          Ctrl+Print { screenshot-screen; }
+          Alt+Print { screenshot-window; }
 
-        Mod+Minus { set-column-width "-10%"; }
-        Mod+Plus  { set-column-width "+10%"; }
+          Mod+1 { focus-workspace "1"; }
+          Mod+2 { focus-workspace "2"; }
+          Mod+3 { focus-workspace "3"; }
+          Mod+4 { focus-workspace "4"; }
+          Mod+5 { focus-workspace "5"; }
+          Mod+Shift+1 { move-column-to-workspace "1"; }
+          Mod+Shift+2 { move-column-to-workspace "2"; }
+          Mod+Shift+3 { move-column-to-workspace "3"; }
+          Mod+Shift+4 { move-column-to-workspace "4"; }
+          Mod+Shift+5 { move-column-to-workspace "5"; }
 
-        Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+          XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume=raise"; }
+          XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume=lower"; }
+          XF86AudioMute { spawn "swayosd-client" "--output-volume=mute-toggle"; }
+          XF86MonBrightnessUp { spawn "swayosd-client" "--brightness=raise"; }
+          XF86MonBrightnessDown { spawn "swayosd-client" "--brightness=lower"; }
+        }
 
-        Print { screenshot; }
-        Ctrl+Print { screenshot-screen; }
-        Alt+Print { screenshot-window; }
+        hotkey-overlay {
+            skip-at-startup
+        }
 
-        Mod+1 { focus-workspace "1"; }
-        Mod+2 { focus-workspace "2"; }
-        Mod+3 { focus-workspace "3"; }
-        Mod+4 { focus-workspace "4"; }
-        Mod+5 { focus-workspace "5"; }
-        Mod+Shift+1 { move-column-to-workspace "1"; }
-        Mod+Shift+2 { move-column-to-workspace "2"; }
-        Mod+Shift+3 { move-column-to-workspace "3"; }
-        Mod+Shift+4 { move-column-to-workspace "4"; }
-        Mod+Shift+5 { move-column-to-workspace "5"; }
-
-        XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume=raise"; }
-        XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume=lower"; }
-        XF86AudioMute { spawn "swayosd-client" "--output-volume=mute-toggle"; }
-        XF86MonBrightnessUp { spawn "swayosd-client" "--brightness=raise"; }
-        XF86MonBrightnessDown { spawn "swayosd-client" "--brightness=lower"; }
-      }
-
-      hotkey-overlay {
-          skip-at-startup
-      }
-
-      include "user.kdl"
-    '';
+        include "user.kdl"
+      '';
   };
 
   home.file.".config/niri/background.png" = {

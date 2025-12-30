@@ -143,6 +143,7 @@ in
         "cpu" = {
           interval = 5;
           format = "󰍛";
+          on-click = "$TERMINAL -e btop";
         };
 
         "battery" = {

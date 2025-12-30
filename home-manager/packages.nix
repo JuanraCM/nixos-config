@@ -12,6 +12,7 @@
 
     # Others
     bluetui
+    btop
     fzf
     gcc
     impala

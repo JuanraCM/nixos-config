@@ -56,8 +56,8 @@ in
       allow_markup = true;
       allow_images = true;
       prompt = "Search...";
-      key_down = "Ctrl-j";
-      key_up = "Ctrl-k";
+      key_down = "Ctrl-n";
+      key_up = "Ctrl-p";
     };
   };
 }

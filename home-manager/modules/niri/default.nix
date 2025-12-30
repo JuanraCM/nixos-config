@@ -72,8 +72,18 @@ in
           open-maximized true
         }
 
+        window-rule {
+          match title="^Picture in picture$"
+          open-floating true
+        }
+
+        window-rule {
+          match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+          default-floating-position x=10 y=10 relative-to="bottom-right"
+        }
+
         binds {
-          Mod+Return { spawn "wezterm"; } // Change
+          Mod+Return { spawn "wezterm"; }
           Mod+B { spawn "chromium"; }
           Mod+Space { spawn "wofi" "-S" "drun"; }
           Mod+Q { spawn "power-menu"; }
@@ -93,6 +103,7 @@ in
 
           Mod+F { maximize-column; }
           Mod+Shift+F { fullscreen-window; }
+          Mod+Alt+F { toggle-window-floating; }
 
           Mod+Minus { set-column-width "-10%"; }
           Mod+Plus  { set-column-width "+10%"; }

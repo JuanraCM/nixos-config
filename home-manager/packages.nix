@@ -15,7 +15,6 @@
     btop
     fzf
     gcc
-    impala
     nautilus
     neovim
     nodejs

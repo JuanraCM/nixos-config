@@ -12,6 +12,111 @@
     networkmanager.wifi.backend = "iwd";
   };
 
+  # Add LFE sink for internal speakers
+  services.pipewire.extraConfig.pipewire = {
+    "lfe-sink" = {
+      "context.modules" = [
+        {
+          "name" = "libpipewire-module-filter-chain";
+          "args" = {
+            "node.description" = "LFE Audio Output";
+            "media.name" = "LFE Audio Output";
+            "filter.graph" = {
+              "nodes" = [
+                {
+                  "name" = "copyIL";
+                  "type" = "builtin";
+                  "label" = "copy";
+                }
+                {
+                  "name" = "copyOL";
+                  "type" = "builtin";
+                  "label" = "copy";
+                }
+                {
+                  "name" = "copyIR";
+                  "type" = "builtin";
+                  "label" = "copy";
+                }
+                {
+                  "name" = "copyOR";
+                  "type" = "builtin";
+                  "label" = "copy";
+                }
+                {
+                  "name" = "mix";
+                  "type" = "builtin";
+                  "label" = "mixer";
+                  "control" = {
+                    "Gain 1" = 0.5;
+                    "Gain 2" = 0.5;
+                  };
+                }
+                {
+                  "type" = "builtin";
+                  "name" = "lpLFE";
+                  "label" = "bq_lowpass";
+                  "control" = {
+                    "Freq" = 150.0;
+                  };
+                }
+              ];
+              "links" = [
+                {
+                  "output" = "copyIL:Out";
+                  "input" = "copyOL:In";
+                }
+                {
+                  "output" = "copyIR:Out";
+                  "input" = "copyOR:In";
+                }
+                {
+                  "output" = "copyIL:Out";
+                  "input" = "mix:In 1";
+                }
+                {
+                  "output" = "copyIR:Out";
+                  "input" = "mix:In 2";
+                }
+                {
+                  "output" = "mix:Out";
+                  "input" = "lpLFE:In";
+                }
+              ];
+              "inputs" = [
+                "copyIL:In"
+                "copyIR:In"
+              ];
+              "outputs" = [
+                "copyOL:Out"
+                "copyOR:Out"
+                "lpLFE:Out"
+              ];
+            };
+          };
+          "capture.props" = {
+            "node.name" = "input_lfe";
+            "audio.position" = [
+              "FL"
+              "FR"
+            ];
+            "media.class" = "Audio/Sink";
+          };
+          "playback.props" = {
+            "node.name" = "output_lfe";
+            "audio.position" = [
+              "FL"
+              "FR"
+              "LFE"
+            ];
+            "stream.dont-remix" = true;
+            "node.passive" = true;
+          };
+        }
+      ];
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     # NOTE (hdajackretask): Pin 17 - Internal Speaker LFE
     alsa-tools

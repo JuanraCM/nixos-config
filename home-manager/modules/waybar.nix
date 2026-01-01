@@ -101,11 +101,13 @@ in
         "network" = {
           format = "{icon}";
           format-icons = {
-            "wifi-0" = "󰤯";
-            "wifi-1" = "󰤟";
-            "wifi-2" = "󰤢";
-            "wifi-3" = "󰤥";
-            "wifi-4" = "󰤨";
+            wifi = [
+              "󰤯"
+              "󰤟"
+              "󰤢"
+              "󰤥"
+              "󰤨"
+            ];
             "ethernet" = "󰀂";
             "disconnected" = "󰤮";
           };
@@ -148,8 +150,6 @@ in
 
         "battery" = {
           format = "{capacity}% {icon}";
-          format-discharging = "{icon}";
-          format-charging = "{icon}";
           format-plugged = "";
           format-icons = {
             charging = [

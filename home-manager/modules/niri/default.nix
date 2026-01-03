@@ -16,7 +16,7 @@ in
 
         spawn-at-startup "waybar"
         spawn-at-startup "mako"
-        spawn-sh-at-startup "swaybg -i ~/.config/niri/background.png"
+        spawn-sh-at-startup "swaybg -m fill -i ~/.config/niri/background.png"
 
         // spawn-sh-at-startup "wl-paste --watch cliphist store"
         screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

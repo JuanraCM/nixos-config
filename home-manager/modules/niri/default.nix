@@ -8,12 +8,6 @@ in
     text =
       # kdl
       ''
-        workspace "1"
-        workspace "2"
-        workspace "3"
-        workspace "4"
-        workspace "5"
-
         spawn-at-startup "waybar"
         spawn-at-startup "mako"
         spawn-sh-at-startup "swaybg -m fill -i ~/.config/niri/background.png"

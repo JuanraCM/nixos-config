@@ -18,6 +18,7 @@
     nautilus
     neovim
     nodejs
+    obsidian
     opencode
     pavucontrol
     r2modman

@@ -39,6 +39,11 @@ in
           opacity: 0.5;
         }
 
+        /* Hide Niri's default empty workspace */
+        #workspaces button:last-child {
+          opacity: 0;
+        }
+
         #tray {
           margin-right: 20px;
         }

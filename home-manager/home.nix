@@ -1,10 +1,7 @@
 { stateVersion, username, ... }:
 
 {
-  imports = [
-    ./modules
-    ./packages.nix
-  ];
+  imports = [ ./modules ];
 
   home = {
     username = username;

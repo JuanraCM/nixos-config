@@ -2,7 +2,7 @@
   imports = [
     ./audio-pins.nix
     ./lfe-sink.nix
-    ./packages.nix
+    ./local-packages.nix
     ./wireless.nix
   ];
 }

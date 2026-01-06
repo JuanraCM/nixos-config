@@ -12,6 +12,7 @@
     ./net.nix
     ./nh.nix
     ./nix.nix
+    ./packages.nix
     ./polkit.nix
     ./user.nix
     ./zram.nix

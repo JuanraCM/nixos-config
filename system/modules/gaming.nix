@@ -11,6 +11,7 @@
   environment.systemPackages = with pkgs; [
     heroic
     mangohud
+    protonup-qt
   ];
 
   hardware.xpadneo.enable = true;

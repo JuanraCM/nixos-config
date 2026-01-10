@@ -10,6 +10,7 @@
     ./swayosd.nix
     ./terminal.nix
     ./waybar.nix
+    ./webapps
     ./wofi.nix
   ];
 }

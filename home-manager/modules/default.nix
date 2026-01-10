@@ -3,7 +3,7 @@
     ./browser.nix
     ./git.nix
     ./mako.nix
-    ./mangohud
+    ./mangohud.nix
     ./niri
     ./scripts.nix
     ./stylix.nix

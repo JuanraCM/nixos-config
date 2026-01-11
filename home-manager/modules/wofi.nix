@@ -55,6 +55,7 @@ in
       height = 450;
       allow_markup = true;
       allow_images = true;
+      insensitive = true;
       prompt = "Search...";
       key_down = "Ctrl-n";
       key_up = "Ctrl-p";

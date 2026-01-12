@@ -52,6 +52,7 @@ in
         #bluetooth,
         #pulseaudio,
         #cpu,
+        #power-profiles-daemon,
         #battery {
           margin-right: 15px;
         }
@@ -73,6 +74,7 @@ in
           "bluetooth"
           "pulseaudio"
           "cpu"
+          "power-profiles-daemon"
           "battery"
         ];
 
@@ -151,6 +153,16 @@ in
           interval = 5;
           format = "󰍛";
           on-click = "xdg-terminal-exec -e btop";
+        };
+
+        "power-profiles-daemon" = {
+          format = "{icon}";
+          format-icons = {
+            "performance" = "";
+            "balanced" = "";
+            "power-saver" = "";
+          };
+          tooltip-format = "Power Profile: {profile}";
         };
 
         "battery" = {

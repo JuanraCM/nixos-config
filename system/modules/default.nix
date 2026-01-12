@@ -14,6 +14,7 @@
     ./nix.nix
     ./packages.nix
     ./polkit.nix
+    ./power.nix
     ./user.nix
     ./zram.nix
   ];

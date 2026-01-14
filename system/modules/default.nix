@@ -16,6 +16,7 @@
     ./polkit.nix
     ./power.nix
     ./user.nix
+    ./vm-variant.nix
     ./zram.nix
   ];
 }

@@ -1,18 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
-  programs.zsh = {
-    enable = true;
-    shellInit = ''
-      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        niri-session -l
-      fi
-    '';
-  };
+  programs.zsh.enable = true;
 
   users = {
     defaultUserShell = pkgs.zsh;
-    users.juanrita = {
+    users.${username} = {
       isNormalUser = true;
       extraGroups = [
         "wheel"
@@ -20,6 +13,4 @@
       ];
     };
   };
-
-  services.getty.autologinUser = "juanrita";
 }

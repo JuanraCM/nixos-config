@@ -108,6 +108,8 @@ in
           Ctrl+Print { screenshot-screen; }
           Alt+Print { screenshot-window; }
 
+          Mod+Period { spawn "makoctl" "dismiss"; }
+
           Mod+1 { focus-workspace "1"; }
           Mod+2 { focus-workspace "2"; }
           Mod+3 { focus-workspace "3"; }

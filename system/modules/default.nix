@@ -4,6 +4,7 @@
     ./bluetooth.nix
     ./boot.nix
     ./desktop.nix
+    ./direnv.nix
     ./env.nix
     ./gaming.nix
     ./graphics.nix

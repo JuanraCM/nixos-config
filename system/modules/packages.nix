@@ -15,6 +15,7 @@
     btop
     fzf
     gcc
+    lsof
     nautilus
     neovim
     nodejs

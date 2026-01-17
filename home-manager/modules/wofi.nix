@@ -57,8 +57,9 @@ in
       allow_images = true;
       insensitive = true;
       prompt = "Search...";
-      key_down = "Ctrl-n";
-      key_up = "Ctrl-p";
+      key_forward = "Ctrl-n";
+      key_backward = "Ctrl-p";
+      key_expand = "Ctrl-e";
     };
   };
 }

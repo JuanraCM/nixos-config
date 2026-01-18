@@ -130,13 +130,15 @@ in
           format = "󰂲";
           format-connected = "󰂱";
           format-no-controller = "";
-          tooltip-format = "Devices connected: {num_connections}";
+          tooltip-format = "{device_enumerate}";
+          tooltip-format-enumerate-connected = "{device_alias}";
+          tooltip-format-enumerate-connected-battery = "{device_battery_percentage}% 󰥈 - {device_alias}";
           on-click = "xdg-terminal-exec -e bluetui";
         };
 
         "pulseaudio" = {
           format = "{icon}";
-          tooltip-format = "Volume: {volume}%";
+          tooltip-format = "Volume: {volume}%\nOutput: {desc}";
           scroll-step = 5;
           format-muted = "󰝟";
           format-icons = {
@@ -168,6 +170,7 @@ in
         "battery" = {
           format = "{capacity}% {icon}";
           format-plugged = "";
+          format-full = "󰂅";
           format-icons = {
             charging = [
               "󰢜"
@@ -194,9 +197,9 @@ in
               "󰁹"
             ];
           };
-          format-full = "󰂅";
-          tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%";
-          tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%";
+          tooltip-format = "Battery: {capacity}%\nHealth: {health}%";
+          tooltip-format-discharging = "{power:>1.0f}W↓ {capacity}%\nHealth: {health}%";
+          tooltip-format-charging = "{power:>1.0f}W↑ {capacity}%\nHealth: {health}%";
           interval = 5;
           states = {
             warning = 30;

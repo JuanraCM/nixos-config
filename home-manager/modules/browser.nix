@@ -7,8 +7,8 @@
     extensions = [
       # LastPass
       { id = "hdokiejnpimakedhajhdlcegeplioahd"; }
-      # Adblock Plus
-      { id = "cfhdojbkjhnklbpkdaibdccddilifddb"; }
+      # YouTube Adblock
+      { id = "cmedhionkhpnakcndndgjdbohmhepckk"; }
     ];
   };
 }

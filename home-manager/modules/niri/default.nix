@@ -73,6 +73,7 @@ in
 
         window-rule {
           match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+          open-focused false
           default-floating-position x=10 y=10 relative-to="bottom-right"
         }
 

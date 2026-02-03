@@ -10,6 +10,7 @@
     ./graphics.nix
     ./host.nix
     ./kernel.nix
+    ./localsend.nix
     ./net.nix
     ./nh.nix
     ./nix.nix

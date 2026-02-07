@@ -28,6 +28,7 @@
     spotify
     stow
     swaybg
+    unzip
     vesktop
     vlc
     zoxide

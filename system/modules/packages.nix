@@ -31,6 +31,7 @@
     unzip
     vesktop
     vlc
+    zip
     zoxide
   ];
 }

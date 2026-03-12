@@ -13,10 +13,20 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }@inputs:
+    {
+      nixpkgs,
+      home-manager,
+      nix-index-database,
+      ...
+    }@inputs:
     let
       system = "x86_64-linux";
       stateVersion = "25.11";
@@ -53,6 +63,7 @@
                 inherit inputs stateVersion username;
               };
             }
+            nix-index-database.nixosModules.default
           ];
         };
     in

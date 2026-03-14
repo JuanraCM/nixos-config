@@ -77,6 +77,12 @@ in
           default-floating-position x=10 y=10 relative-to="bottom-right"
         }
 
+        gestures {
+          hot-corners {
+            off
+          }
+        }
+
         binds {
           Mod+Return { spawn "wezterm"; }
           Mod+B { spawn "chromium"; }

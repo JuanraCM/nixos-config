@@ -28,6 +28,7 @@
     spotify
     stow
     swaybg
+    tree-sitter
     unzip
     vesktop
     vlc

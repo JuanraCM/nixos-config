@@ -84,7 +84,7 @@ in
         }
 
         binds {
-          Mod+Return { spawn "wezterm"; }
+          Mod+Return { spawn "ghostty"; }
           Mod+B { spawn "chromium"; }
           Mod+Space { spawn "wofi" "-S" "drun"; }
           Mod+Q { spawn "power-menu"; }

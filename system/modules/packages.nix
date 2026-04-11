@@ -10,11 +10,12 @@
     lua-language-server
     nil
 
-    # Others
+    # System tools
     bluetui
     btop
     fzf
     gcc
+    ghostty
     lsof
     nautilus
     neovim
@@ -28,6 +29,7 @@
     spotify
     stow
     swaybg
+    tmux
     tree-sitter
     unzip
     vesktop

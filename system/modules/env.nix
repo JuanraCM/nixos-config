@@ -1,6 +1,6 @@
 {
   environment.sessionVariables = rec {
-    TERMINAL = "wezterm";
+    TERMINAL = "ghostty";
     EDITOR = "nvim";
     MANGOHUD = 1;
   };

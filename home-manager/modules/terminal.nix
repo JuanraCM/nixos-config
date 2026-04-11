@@ -7,7 +7,8 @@
     enable = true;
     settings = {
       default = [
-        "Alacritty.desktop"
+        "com.mitchellh.ghostty.desktop"
+        "-Alacritty.desktop"
         "-org.wezfurlong.wezterm.desktop"
       ];
     };

@@ -3,7 +3,7 @@
 {
   networking.hostName = hostname;
 
-  time.timeZone = "Atlantic/Canary";
+  time.timeZone = "Europe/Madrid";
 
   i18n.defaultLocale = "en_US.UTF-8";
 }

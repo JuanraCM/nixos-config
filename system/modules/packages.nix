@@ -11,6 +11,7 @@
     nil
 
     # System tools
+    alsa-utils
     bluetui
     btop
     fzf

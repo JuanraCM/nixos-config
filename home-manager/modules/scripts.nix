@@ -7,12 +7,14 @@
         "  Shutdown"
         "  Reboot"
         "  Suspend"
+        "  Logout"
       )
       chosen=$(printf '%s\n' "''${options[@]}" | wofi --dmenu --prompt "Power Menu")
       case $chosen in
         "  Shutdown") systemctl poweroff ;;
         "  Reboot") systemctl reboot ;;
         "  Suspend") systemctl suspend ;;
+        "  Logout") niri msg action quit ;;
       esac
     '')
     (writeShellApplication {

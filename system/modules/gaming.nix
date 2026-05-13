@@ -3,7 +3,6 @@
 {
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true;
   };
 
   programs.gamemode.enable = true;
@@ -15,4 +14,9 @@
   ];
 
   hardware.xpadneo.enable = true;
+
+  jovian = {
+    steam.enable = true;
+    hardware.has.amd.gpu = true;
+  };
 }

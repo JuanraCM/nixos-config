@@ -18,11 +18,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    jovian-nixos = {
-      url = "github:Jovian-Experiments/Jovian-NixOS";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -30,7 +25,6 @@
       nixpkgs,
       home-manager,
       nix-index-database,
-      jovian-nixos,
       ...
     }@inputs:
     let
@@ -70,7 +64,6 @@
               };
             }
             nix-index-database.nixosModules.default
-            jovian-nixos.nixosModules.default
           ];
         };
     in

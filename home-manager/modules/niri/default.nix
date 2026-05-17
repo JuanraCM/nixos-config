@@ -139,7 +139,7 @@ in
             skip-at-startup
         }
 
-        include "user.kdl"
+        include optional=true "user.kdl"
       '';
   };
 

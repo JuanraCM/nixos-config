@@ -1,8 +1,9 @@
 { pkgs, ... }:
 
 {
-  programs.niri.enable = true;
-  services.displayManager.gdm.enable = true;
+  services.displayManager.ly = {
+    enable = true;
+  };
 
   xdg.portal = {
     enable = true;
@@ -11,8 +12,14 @@
       xdg-desktop-portal-gtk
     ];
   };
-
   environment.systemPackages = [ pkgs.xwayland-satellite ];
 
+  programs.niri.enable = true;
+
   services.gvfs.enable = true;
+
+  services.desktopManager.plasma6.enable = true;
+  programs.kdeconnect = {
+    enable = true;
+  };
 }

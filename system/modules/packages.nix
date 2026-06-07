@@ -25,6 +25,7 @@
     opencode
     pavucontrol
     r2modman
+    reco
     ripgrep
     ruby
     spotify

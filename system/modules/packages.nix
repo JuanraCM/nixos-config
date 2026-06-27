@@ -17,6 +17,7 @@
     fzf
     gcc
     ghostty
+    libnotify
     lsof
     nautilus
     neovim

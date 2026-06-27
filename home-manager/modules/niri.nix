@@ -98,7 +98,6 @@ in
 
           Mod+Return { spawn "ghostty"; }
           Mod+B { spawn "chromium"; }
-          Mod+Q { spawn "power-menu"; }
 
           Mod+O repeat=false { toggle-overview; }
           Mod+W repeat=false { close-window; }

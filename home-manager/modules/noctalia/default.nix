@@ -14,6 +14,9 @@
         font_family = "Noto Sans"
         settings_show_advanced = true
 
+        [shell.launcher]
+        categories = false
+
         [location]
         auto_locate = true
 
@@ -32,20 +35,39 @@
         margin_edge = 0
         margin_ends = 0
         radius = 0
+        shadow = false
         widget_spacing = 10
 
-
         [widget.workspaces]
+        display = "name"
         minimal = true
+        labels_only_when_occupied = true
 
         [widget.media]
         hide_when_no_media = true
+
+        [widget.network]
+        show_label = false
 
         [widget.volume]
         show_label = false
 
         [widget.sysmon]
         display = "text"
+
+        [plugins]
+        enabled = [ "noctalia/translator" ]
+
+        [desktop_widgets]
+        enabled = false
+
+        [lockscreen_widgets]
+        enabled = false
+
+        [keybinds]
+        validate = [ "Return", "KP_Enter" ]
+        down = [ "Down", "Ctrl+n" ]
+        up = [ "Up", "Ctrl+p" ]
       '';
   };
 

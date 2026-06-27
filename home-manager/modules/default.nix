@@ -4,7 +4,8 @@
     ./git.nix
     ./mako.nix
     ./mangohud.nix
-    ./niri
+    ./niri.nix
+    ./noctalia
     ./scripts.nix
     ./stylix.nix
     ./swayosd.nix

@@ -8,9 +8,7 @@ in
     text =
       # kdl
       ''
-        spawn-at-startup "waybar"
-        spawn-at-startup "mako"
-        spawn-sh-at-startup "swaybg -m fill -i ~/.config/niri/background.png"
+        spawn-at-startup "noctalia"
 
         // spawn-sh-at-startup "wl-paste --watch cliphist store"
         screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
@@ -77,16 +75,29 @@ in
           default-floating-position x=10 y=10 relative-to="bottom-right"
         }
 
+        window-rule {
+          match app-id="dev.noctalia.Noctalia.Settings"
+          open-floating true
+        }
+
         gestures {
           hot-corners {
             off
           }
         }
 
+        debug {
+          // Allows notification actions and window activation from Noctalia.
+          honor-xdg-activation-with-invalid-serial
+        }
+
         binds {
+          Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+          Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
+          Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
+
           Mod+Return { spawn "ghostty"; }
           Mod+B { spawn "chromium"; }
-          Mod+Space { spawn "wofi" "-S" "drun"; }
           Mod+Q { spawn "power-menu"; }
 
           Mod+O repeat=false { toggle-overview; }
@@ -128,11 +139,11 @@ in
           Mod+Shift+4 { move-column-to-workspace "4"; }
           Mod+Shift+5 { move-column-to-workspace "5"; }
 
-          XF86AudioRaiseVolume { spawn "swayosd-client" "--output-volume=raise"; }
-          XF86AudioLowerVolume { spawn "swayosd-client" "--output-volume=lower"; }
-          XF86AudioMute { spawn "swayosd-client" "--output-volume=mute-toggle"; }
-          XF86MonBrightnessUp { spawn "swayosd-client" "--brightness=raise"; }
-          XF86MonBrightnessDown { spawn "swayosd-client" "--brightness=lower"; }
+          XF86AudioRaiseVolume { spawn-sh "noctalia msg volume-up"; }
+          XF86AudioLowerVolume { spawn-sh "noctalia msg volume-down"; }
+          XF86AudioMute { spawn-sh "noctalia msg volume-mute"; }
+          XF86MonBrightnessUp { spawn-sh "noctalia msg brightness-up"; }
+          XF86MonBrightnessDown { spawn-sh "noctalia msg brightness-down"; }
         }
 
         hotkey-overlay {
@@ -141,9 +152,5 @@ in
 
         include optional=true "user.kdl"
       '';
-  };
-
-  home.file.".config/niri/background.png" = {
-    source = ./background.png;
   };
 }

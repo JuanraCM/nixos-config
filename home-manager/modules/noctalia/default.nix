@@ -17,6 +17,9 @@
         [shell.launcher]
         categories = false
 
+        [shell.panel]
+        shadow = false
+
         [location]
         auto_locate = true
 

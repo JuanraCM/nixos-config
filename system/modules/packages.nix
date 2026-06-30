@@ -14,6 +14,7 @@
     alsa-utils
     bluetui
     btop
+    devenv
     fzf
     gcc
     ghostty

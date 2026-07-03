@@ -26,6 +26,7 @@
     obsidian
     opencode
     pavucontrol
+    pi-coding-agent
     r2modman
     reco
     ripgrep

@@ -14,6 +14,7 @@
     alsa-utils
     bluetui
     btop
+    claude-code
     devenv
     fzf
     gcc
@@ -30,6 +31,7 @@
     r2modman
     reco
     ripgrep
+    rtk
     ruby
     spotify
     stow

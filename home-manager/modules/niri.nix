@@ -98,7 +98,7 @@ in
           Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
           Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
 
-          Mod+Return { spawn "ghostty"; }
+          Mod+Return { spawn-sh "GTK_IM_MODULE=simple ghostty"; }
           Mod+B { spawn "chromium"; }
 
           Mod+O repeat=false { toggle-overview; }

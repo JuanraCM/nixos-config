@@ -46,10 +46,10 @@
         widget_spacing = 10;
       };
 
-      widgets = {
+      widget = {
         workspaces = {
           display = "name";
-          minimal = true;
+          style = "minimal";
           labels_only_when_occupied = true;
         };
 
@@ -73,7 +73,11 @@
       desktop_widgets.enabled = false;
       lockscreen_widgets.enabled = false;
 
-      plugins.translator.enabled = true;
+      plugins = {
+        enabled = [
+          "noctalia/translator"
+        ];
+      };
 
       keybinds = {
         validate = [

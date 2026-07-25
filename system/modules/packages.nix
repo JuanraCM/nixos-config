@@ -31,7 +31,6 @@
     r2modman
     reco
     ripgrep
-    rtk
     ruby
     spotify
     stow

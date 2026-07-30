@@ -12,6 +12,7 @@
 
     # System tools
     alsa-utils
+    bitwarden-cli
     bluetui
     btop
     claude-code

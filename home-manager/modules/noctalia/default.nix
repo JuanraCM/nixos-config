@@ -76,6 +76,7 @@
       plugins = {
         enabled = [
           "noctalia/translator"
+          "noctalia/bitwarden"
         ];
       };
 

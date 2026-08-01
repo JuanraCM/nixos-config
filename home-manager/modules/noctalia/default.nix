@@ -49,6 +49,7 @@
       widget = {
         workspaces = {
           display = "name";
+          scale = 0.75;
           style = "minimal";
           labels_only_when_occupied = true;
         };

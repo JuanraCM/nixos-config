@@ -48,10 +48,10 @@
 
       widget = {
         workspaces = {
-          display = "name";
+          label_source = "name";
+          labels_only_when_occupied = true;
           scale = 0.75;
           style = "minimal";
-          labels_only_when_occupied = true;
         };
 
         media = {
@@ -67,7 +67,8 @@
         };
 
         sysmon = {
-          display = "text";
+          show_value = true;
+          visualization = "none";
         };
       };
 

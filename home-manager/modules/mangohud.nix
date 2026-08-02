@@ -1,7 +1,7 @@
 {
   home.file.".config/MangoHud/MangoHud.conf" = {
     text = ''
-      fps_limit=0,60,75,120,165
+      fps_limit=0,60,75,90,120,165
 
       preset=1,2
 

@@ -26,16 +26,13 @@
     neovim
     nodejs
     obsidian
-    opencode
     pavucontrol
     pi-coding-agent
     r2modman
-    reco
     ripgrep
     ruby
     spotify
     stow
-    swaybg
     tmux
     tree-sitter
     unzip

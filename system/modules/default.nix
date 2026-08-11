@@ -18,6 +18,7 @@
     ./packages.nix
     ./polkit.nix
     ./power.nix
+    ./syncthing.nix
     ./user.nix
     ./vm-variant.nix
     ./zram.nix

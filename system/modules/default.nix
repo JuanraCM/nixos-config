@@ -15,6 +15,7 @@
     ./net.nix
     ./nh.nix
     ./nix.nix
+    ./overlays.nix
     ./packages.nix
     ./polkit.nix
     ./power.nix

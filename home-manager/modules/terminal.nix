@@ -1,5 +1,5 @@
 {
-  programs.wezterm = {
+  programs.ghostty = {
     enable = true;
   };
 
@@ -9,7 +9,6 @@
       default = [
         "com.mitchellh.ghostty.desktop"
         "-Alacritty.desktop"
-        "-org.wezfurlong.wezterm.desktop"
       ];
     };
   };

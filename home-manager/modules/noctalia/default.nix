@@ -29,6 +29,7 @@
         center = [
           "clock"
           "media"
+          "pulse"
         ];
         end = [
           "tray"
@@ -70,6 +71,10 @@
           show_value = true;
           visualization = "none";
         };
+
+        pulse = {
+          type = "lowcache/claude-companion:pulse";
+        };
       };
 
       desktop_widgets.enabled = false;
@@ -79,6 +84,7 @@
         enabled = [
           "noctalia/translator"
           "noctalia/bitwarden"
+          "lowcache/claude-companion"
         ];
       };
 
@@ -101,5 +107,10 @@
 
   home.file."Pictures/Wallpapers/background.png" = {
     source = ./background.png;
+  };
+
+  # Symlink claude-companion plugin files to its canonical folder
+  home.file.".local/share/noctalia/plugins/claude-companion" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.local/state/noctalia/plugins/materialized/community/claude-companion";
   };
 }

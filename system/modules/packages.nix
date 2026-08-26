@@ -27,6 +27,8 @@
     obsidian
     pavucontrol
     pi-coding-agent
+    playerctl
+    python3
     r2modman
     ripgrep
     ruby

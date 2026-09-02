@@ -9,5 +9,6 @@
     ./stylix.nix
     ./terminal.nix
     ./webapps
+    ./hyprland
   ];
 }

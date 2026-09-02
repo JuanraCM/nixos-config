@@ -6,6 +6,11 @@
     gamescopeSession.enable = true;
   };
 
+  programs.gamescope = {
+    enable = true;
+    enableWsi = true;
+  };
+
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [

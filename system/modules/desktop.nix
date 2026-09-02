@@ -17,7 +17,10 @@
 
   programs.niri.enable = true;
 
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    withUWSM = true;
+  };
 
   services.gvfs.enable = true;
 

@@ -5,5 +5,5 @@ require("keybindings")
 
 local ok, _ = pcall(require, "user")
 if not ok then
-  print("Specific machine config not found")
+  hl.notification.create({ text = "Specific user config not found", timeout = 3000, icon = "warn" })
 end

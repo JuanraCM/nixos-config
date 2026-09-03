@@ -87,4 +87,10 @@ hl.bind(mainMod .. "+ tab", function()
   end
 
   hl.workspace_rule({ workspace = workspace.name, layout = target_layout })
+
+  hl.notification.create({
+    text = "Current layout: " .. target_layout,
+    timeout = 2000,
+    icon = "info"
+  })
 end)

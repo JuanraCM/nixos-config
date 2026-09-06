@@ -10,6 +10,12 @@ let
       hyprctl eval "hl.monitor({ output = \"SUNSHINE\", mode = \"''${client_mode}\" })"
     '';
   };
+  steamAppCmd = pkgs.writeShellApplication {
+    name = "steam-app-cmd";
+    text = ''
+      gamescope --steam -f -W "''${SUNSHINE_CLIENT_WIDTH}" -H "''${SUNSHINE_CLIENT_HEIGHT}" -- steam
+    '';
+  };
 in
 {
   services.sunshine = {
@@ -33,13 +39,7 @@ in
         }
         {
           name = "Steam Big Picture";
-          detached = [ "setsid steam steam://open/bigpicture" ];
-          prep-cmd = [
-            {
-              do = "";
-              undo = "setsid steam steam://close/bigpicture";
-            }
-          ];
+          cmd = "${steamAppCmd}/bin/steam-app-cmd";
           image-path = "steam.png";
         }
       ];

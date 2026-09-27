@@ -1,6 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 let
+  sunshineSession = pkgs.writeShellApplication {
+    name = "sunshine-greetd-session";
+    text = ''
+      if grep -qx connected /sys/class/drm/card*-{DP,HDMI-A,Virtual}-*/status; then
+        exit 0
+      fi
+
+      exec ${pkgs.uwsm}/bin/uwsm start hyprland.desktop
+    '';
+  };
   sunshinePrepCmd = pkgs.writeShellApplication {
     name = "sunshine-hyprland-prep-cmd";
     text = ''
@@ -54,4 +64,14 @@ in
     };
     firewall.allowedUDPPorts = [ 9 ];
   };
+
+  services.greetd = {
+    settings.initial_session = {
+      command = "${sunshineSession}/bin/sunshine-greetd-session";
+      user = username;
+    };
+  };
+
+  # Ensure DRM devices are populated as early as possible
+  hardware.amdgpu.initrd.enable = true;
 }

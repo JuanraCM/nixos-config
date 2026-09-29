@@ -33,6 +33,7 @@ in
     capSysAdmin = true;
     openFirewall = true;
     settings = {
+      capture = "wlr";
       global_prep_cmd = builtins.toJSON [
         {
           do = "${sunshinePrepCmd}/bin/sunshine-hyprland-prep-cmd";

@@ -30,6 +30,7 @@ in
 {
   services.sunshine = {
     enable = true;
+    autoStart = false;
     capSysAdmin = true;
     openFirewall = true;
     settings = {

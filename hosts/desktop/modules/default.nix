@@ -4,6 +4,6 @@
     ./local-packages.nix
     ./rgb.nix
     ./ssh.nix
-    ./moonshine.nix # ./sunshine.nix
+    ./sunshine.nix # ./moonshine.nix
   ];
 }

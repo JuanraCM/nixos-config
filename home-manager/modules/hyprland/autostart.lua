@@ -1,3 +1,5 @@
 hl.on("hyprland.start", function()
-  hl.exec_cmd("noctalia")
+  if os.getenv("SUNSHINE_HEADLESS") ~= "1" then
+    hl.exec_cmd("noctalia")
+  end
 end)

@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -29,6 +30,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       nix-index-database,
       ...
@@ -37,6 +39,11 @@
       system = "x86_64-linux";
       stateVersion = "26.11";
       username = "juanrita";
+
+      pkgsStable = import nixpkgs-stable {
+        inherit system;
+        config.allowUnfree = true;
+      };
 
       hostnames = [
         "desktop"
@@ -54,6 +61,7 @@
               stateVersion
               hostname
               username
+              pkgsStable
               ;
           };
 
@@ -66,7 +74,7 @@
               home-manager.users.${username} = ./home-manager/home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
-                inherit inputs stateVersion username;
+                inherit inputs stateVersion username pkgsStable;
               };
             }
             nix-index-database.nixosModules.default

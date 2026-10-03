@@ -1,4 +1,9 @@
-{ pkgs, username, ... }:
+{
+  pkgs,
+  pkgsStable,
+  username,
+  ...
+}:
 
 let
   sunshineSession = pkgs.writeShellApplication {
@@ -8,7 +13,7 @@ let
         exit 0
       fi
 
-      exec ${pkgs.uwsm}/bin/uwsm start hyprland.desktop
+      SUNSHINE_HEADLESS=1 exec ${pkgs.uwsm}/bin/uwsm start hyprland.desktop
     '';
   };
   sunshinePrepCmd = pkgs.writeShellApplication {
@@ -23,12 +28,16 @@ let
   steamAppCmd = pkgs.writeShellApplication {
     name = "steam-app-cmd";
     text = ''
-      gamescope --steam -f -W "''${SUNSHINE_CLIENT_WIDTH}" -H "''${SUNSHINE_CLIENT_HEIGHT}" -- steam
+      gamescope --steam -f --adaptive-sync  \
+        -W "''${SUNSHINE_CLIENT_WIDTH}" -H "''${SUNSHINE_CLIENT_HEIGHT}" \
+        -r "''${SUNSHINE_CLIENT_FPS}" \
+        -- steam 
     '';
   };
 in
 {
   services.sunshine = {
+    package = pkgsStable.sunshine;
     enable = true;
     autoStart = false;
     capSysAdmin = true;

@@ -1,4 +1,22 @@
-{ username, ... }:
+{ pkgs, username, ... }:
+
+let
+  moonshineGamescope = pkgs.writeShellApplication {
+    name = "moonshine-gamescope";
+    text = ''
+      if [ -n "''${MOONSHINE_CLIENT_WIDTH:-}" ]; then
+        exec gamescope \
+          -f \
+          -W "$MOONSHINE_CLIENT_WIDTH" -H "$MOONSHINE_CLIENT_HEIGHT" \
+          -w "$MOONSHINE_CLIENT_WIDTH" -h "$MOONSHINE_CLIENT_HEIGHT" \
+          -r "$MOONSHINE_CLIENT_FRAMERATE" \
+          -- "$@"
+      else
+        exec "$@"
+      fi
+    '';
+  };
+in
 {
   services.moonshine = {
     enable = true;
@@ -27,6 +45,8 @@
       ];
     };
   };
+
+  environment.systemPackages = [ moonshineGamescope ];
 
   networking = {
     interfaces = {

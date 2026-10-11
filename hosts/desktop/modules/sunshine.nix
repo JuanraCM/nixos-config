@@ -1,9 +1,4 @@
-{
-  pkgs,
-  pkgsStable,
-  username,
-  ...
-}:
+{ pkgs, username, ... }:
 
 let
   sunshineSession = pkgs.writeShellApplication {
@@ -37,7 +32,6 @@ let
 in
 {
   services.sunshine = {
-    package = pkgsStable.sunshine;
     enable = true;
     autoStart = false;
     capSysAdmin = true;

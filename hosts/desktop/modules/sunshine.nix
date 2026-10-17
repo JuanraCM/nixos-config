@@ -45,6 +45,7 @@ in
         }
       ];
       output_name = "SUNSHINE";
+      gamepad = "x360";
     };
     applications = {
       apps = [

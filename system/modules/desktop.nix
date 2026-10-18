@@ -1,12 +1,8 @@
 { pkgs, ... }:
 
 {
-  services.greetd = {
+  services.displayManager.noctalia-greeter = {
     enable = true;
-    settings.default_session = {
-      user = "greeter";
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --asterisks";
-    };
   };
 
   xdg.portal = {

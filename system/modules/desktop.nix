@@ -3,6 +3,16 @@
 {
   services.displayManager.noctalia-greeter = {
     enable = true;
+    settings = {
+      cursor.size = 24;
+      appearance = {
+        hide_logo = true;
+      };
+    };
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+    };
   };
 
   xdg.portal = {

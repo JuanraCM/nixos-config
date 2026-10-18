@@ -17,8 +17,6 @@
       neovim.enable = false;
       waybar.enable = false;
       ghostty.enable = false;
-      wofi.colors.enable = false;
-      qt.enable = false; # Breaks plasma DE
     };
 
     polarity = "dark";

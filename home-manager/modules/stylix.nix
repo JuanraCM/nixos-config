@@ -23,9 +23,9 @@
     base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
 
     cursor = {
-      name = "DMZ-Black";
+      name = "Bibata-Modern-Classic";
       size = 24;
-      package = pkgs.vanilla-dmz;
+      package = pkgs.bibata-cursors;
     };
 
     fonts = {

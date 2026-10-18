@@ -12,6 +12,8 @@
 
   stylix = {
     enable = true;
+    # nixpkgs options are disabled with home-manager.useGlobalPkgs
+    overlays.enable = false;
 
     targets = {
       neovim.enable = false;

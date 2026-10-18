@@ -74,7 +74,12 @@
               home-manager.users.${username} = ./home-manager/home.nix;
               home-manager.backupFileExtension = "backup";
               home-manager.extraSpecialArgs = {
-                inherit inputs stateVersion username pkgsStable;
+                inherit
+                  inputs
+                  stateVersion
+                  username
+                  pkgsStable
+                  ;
               };
             }
             nix-index-database.nixosModules.default

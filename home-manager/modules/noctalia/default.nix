@@ -13,6 +13,7 @@
         settings_show_advanced = true;
         launcher.categories = false;
         panel.shadow = false;
+        launch_apps_custom_command = "uwsm-app -- $CMD";
       };
 
       theme = {

@@ -1,9 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 
 {
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
+    extraCompatPackages = [ pkgs.proton-ge-bin ];
   };
 
   programs.gamescope = {
@@ -20,4 +21,6 @@
   ];
 
   hardware.xpadneo.enable = true;
+
+  users.users.${username}.extraGroups = [ "gamemode" ];
 }

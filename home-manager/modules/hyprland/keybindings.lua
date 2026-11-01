@@ -18,7 +18,7 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
-hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("GTK_IM_MODULE=simple ghostty -e tmux"))
+hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("GTK_IM_MODULE=simple ghostty -e herdr"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("chromium"))
 
 hl.bind(mainMod .. " + W", hl.dsp.window.close())

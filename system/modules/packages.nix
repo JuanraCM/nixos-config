@@ -19,6 +19,7 @@
     devenv
     fzf
     gcc
+    jq
     libnotify
     lsof
     nautilus

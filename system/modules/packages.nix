@@ -19,6 +19,7 @@
     devenv
     fzf
     gcc
+    herdr
     jq
     libnotify
     lsof
@@ -40,6 +41,8 @@
     unzip
     vesktop
     vlc
+    worktrunk
+    wt
     zip
     zoxide
   ];

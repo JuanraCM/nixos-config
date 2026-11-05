@@ -9,6 +9,7 @@
     ./env.nix
     ./gaming.nix
     ./graphics.nix
+    ./hid.nix
     ./host.nix
     ./kernel.nix
     ./localsend.nix

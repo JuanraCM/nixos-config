@@ -6,7 +6,6 @@
     ./docker.nix
     ./lfe-sink.nix
     ./local-packages.nix
-    ./nuphy.nix
     ./obs.nix
     ./wireless.nix
   ];

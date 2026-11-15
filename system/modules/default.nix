@@ -20,6 +20,7 @@
     ./packages.nix
     ./polkit.nix
     ./power.nix
+    ./ssh.nix
     ./syncthing.nix
     ./user.nix
     ./vm-variant.nix

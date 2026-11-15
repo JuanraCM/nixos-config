@@ -332,6 +332,22 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1794537146,
+        "narHash": "sha256-Wpz/7x/YWnDIBu7yj6ixe8j6fIMsidd9Y+o1PqPF3iM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d5cc6833999746cffdfe0598f7bc801a57b887a9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "noctalia": {
       "inputs": {
         "nixpkgs": "nixpkgs_3"
@@ -376,6 +392,24 @@
         "type": "github"
       }
     },
+    "pulsedeck": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1794756678,
+        "narHash": "sha256-DI1wFb6czEds5hoOejmar8r7bN1MuDzlEtRmRZYQvL4=",
+        "owner": "JuanraCM",
+        "repo": "pulsedeck",
+        "rev": "085dc11dc9a4fafd40aa9966554e5e130af86627",
+        "type": "github"
+      },
+      "original": {
+        "owner": "JuanraCM",
+        "repo": "pulsedeck",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
@@ -384,6 +418,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-stable": "nixpkgs-stable",
         "noctalia": "noctalia",
+        "pulsedeck": "pulsedeck",
         "stylix": "stylix"
       }
     },

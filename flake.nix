@@ -25,6 +25,8 @@
     };
 
     nix-amd-ai.url = "github:noamsto/nix-amd-ai";
+
+    pulsedeck.url = "github:JuanraCM/pulsedeck";
   };
 
   outputs =

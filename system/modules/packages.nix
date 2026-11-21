@@ -19,6 +19,7 @@
     devenv
     fzf
     gcc
+    gh
     herdr
     herdr-desktop
     jq

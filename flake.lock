@@ -397,11 +397,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1795271043,
-        "narHash": "sha256-pJdQw7diABpgOzDKYZZRglZmifTEO0HFi5ulIXGS7nI=",
+        "lastModified": 1795292357,
+        "narHash": "sha256-x8ReZHWrk+16/f06WGL568HCGbUubY2gor10HUsE+aQ=",
         "owner": "JuanraCM",
         "repo": "pulsedeck",
-        "rev": "1690856e6f8e9a23e4235b3f3fa1c2ac28a389bb",
+        "rev": "1b92aa19d3a5bfbd2412a6081d63e164230e0e35",
         "type": "github"
       },
       "original": {

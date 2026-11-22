@@ -18,6 +18,10 @@ hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
 
+hl.bind("Print", hl.dsp.exec_cmd(ipc .. "screenshot-fullscreen"))
+hl.bind("SHIFT + Print", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(ipc .. "annotate"))
+
 hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd("GTK_IM_MODULE=simple ghostty"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("chromium"))
 

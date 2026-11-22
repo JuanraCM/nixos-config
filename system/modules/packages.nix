@@ -20,8 +20,8 @@
     fzf
     gcc
     gh
-    herdr
     herdr-desktop
+    herdr-core
     jq
     libnotify
     lsof

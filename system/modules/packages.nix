@@ -20,8 +20,8 @@
     fzf
     gcc
     gh
-    herdr-desktop
     herdr-core
+    herdr-desktop
     jq
     libnotify
     lsof
@@ -43,6 +43,7 @@
     unzip
     vesktop
     vlc
+    wl-clipboard
     worktrunk
     wt
     zip
